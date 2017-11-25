@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+<Beta>True</Beta>
+<Category>Productivity: Tools:</Category>
+  <Name>jacobped-teamcity</Name>
+  <Description>
+    TeamCity build server[br]
+    [b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]
+    [b]/data[/b] This is where TeamCity will store it's configuration files and various persistent data.[br]
+    [b][u][span style='color: #E80000;']Logs directory[/span][/u][/b][br]
+    [b]/logs[/b] This is where TeamCity will store it's logs.
+  </Description>
+  <Overview>
+	Teamcity Build server for automating build and deployments tasks.
+  </Overview>
+  <Support>none atm</Support>
+  <Registry>https://registry.hub.docker.com/u/jetbrains/teamcity-server/</Registry>
+  <GitHub>https://github.com/JetBrains/teamcity-docker-server</GitHub>
+  <Repository>jetbrains/teamcity-server</Repository>
+  <Project>https://www.jetbrains.com/teamcity/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8111</HostPort>
+        <ContainerPort>8111</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>TEAMCITY_CONTEXT</Name>
+      <Value>/teamcity</Value>
+    </Variable>
+    <Variable>
+      <Name>UMASK</Name>
+      <Value>000</Value>
+    </Variable>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/teamcity/data</HostDir>
+      <ContainerDir>/data/teamcity_server/datadir</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/teamcity/logs</HostDir>
+      <ContainerDir>/opt/teamcity/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8111]/teamcity/</WebUI>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/teamcity-icon.png</Icon>
+  <ExtraParams></ExtraParams>
+</Containers>
