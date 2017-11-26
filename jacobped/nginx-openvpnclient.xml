@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
 <Beta>True</Beta>
-<Category>Productivity: Tools:</Category>
+<Category>Network:Proxy</Category>
   <Name>nginx-openvpnclient</Name>
   <Description>
     Nginx reverse proxy over OpenVPN-Client[br]
+	[br]
     [b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]
     [b]/config[/b] This is where the container will store it's configuration files.[br]
     [b][u][span style='color: #E80000;']Logs directory[/span][/u][/b][br]
     [b]/log[/b] This is where logs from Nginx and process manager will be stored.[br]
 	[br]
-	[u][b]Extra parameters[/b][/u]
+	[u][b]Extra parameters[/b][/u][br]
 	[b]--cap-add=NET_ADMIN[/b]: Required to give access to host network stack without container being priviledged.[br]
 	[b]--device=/dev/net/tun[/b]: Gives OpenVPN access to use the tun adapter.
   </Description>
@@ -35,10 +36,6 @@
     </Publish>
   </Networking>
   <Environment>
-    <Variable>
-      <Name>TEAMCITY_CONTEXT</Name>
-      <Value>/teamcity</Value>
-    </Variable>
     <Variable>
       <Name>UMASK</Name>
       <Value>000</Value>
