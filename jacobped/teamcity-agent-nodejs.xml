@@ -7,6 +7,9 @@
     Teamcity Build agent for doing the automated build and deployment tasks. Includes docker-in-docker support and Nodejs.[br]
     [b][u][span style='color: #E80000;']Config directory[/span][/u][/b][br]
     [b]/config[/b] This is where TeamCity will store it's configuration files and various persistent data.
+    [br]
+    [b][u][span style='color: #E80000;']DOCKER_OPTS[/span][/u][/b][br]
+    [b]/config[/b] For defining docker daemon options. [br]https://docs.docker.com/engine/reference/commandline/dockerd/
   </Description>
   <Overview>
 	Teamcity Build agent for doing the automated build and deployment tasks. Includes docker-in-docker support.
@@ -33,6 +36,10 @@
     <Variable>
       <Name>DOCKER_IN_DOCKER</Name>
       <Value>start</Value>
+    </Variable>
+    <Variable>
+      <Name>DOCKER_OPTS</Name>
+      <Value></Value>
     </Variable>
     <Variable>
       <Name>UMASK</Name>
