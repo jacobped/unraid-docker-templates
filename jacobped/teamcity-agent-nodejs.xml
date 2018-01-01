@@ -28,7 +28,7 @@
     </Variable>
     <Variable>
       <Name>AGENT_NAME</Name>
-      <Value>Unraid-Docker-TeamCity-Agent</Value>
+      <Value>Unraid-Docker-TeamCity-Agent-Nodejs</Value>
     </Variable>
     <Variable>
       <Name>DOCKER_IN_DOCKER</Name>
