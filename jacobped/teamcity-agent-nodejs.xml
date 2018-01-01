@@ -49,12 +49,12 @@
   </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/teamcity-agent/config</HostDir>
+      <HostDir>/mnt/cache/appdata/teamcity-agent-nodejs/config</HostDir>
       <ContainerDir>/data/teamcity_agent/conf</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/cache/appdata/teamcity-agent/logs</HostDir>
+      <HostDir>/mnt/cache/appdata/teamcity-agent-nodejs/logs</HostDir>
       <ContainerDir>/opt/buildagent/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
