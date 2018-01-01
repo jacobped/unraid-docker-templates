@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+<Beta>True</Beta>
+<Category>Productivity: Tools:</Category>
+  <Name>docker-registry</Name>
+  <Description>
+    Standard docker registry container.[br]
+    Perfect for a private and local registry to deploy and retrieve images from.
+  </Description>
+  <Overview>
+  </Overview>
+	Standard docker registry container.
+  <Support>none atm</Support>
+  <Registry>https://registry.hub.docker.com/_/registry/</Registry>
+  <GitHub>https://github.com/docker/distribution-library-image</GitHub>
+  <Repository>registry:2</Repository>
+  <Project>https://docs.docker.com/registry</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5000</HostPort>
+        <ContainerPort>5000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+  </Environment>
+  <Data>
+  </Data>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/docker-registry.png</Icon>
+  <ExtraParams></ExtraParams>
+</Containers>
