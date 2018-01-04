@@ -2,7 +2,7 @@
 <Containers>
 <Beta>True</Beta>
 <Category>Productivity: Tools:</Category>
-  <Name>jacobped-teamcity</Name>
+  <Name>teamcity</Name>
   <Description>
     TeamCity build server[br]
     [b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]

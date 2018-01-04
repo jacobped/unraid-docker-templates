@@ -2,7 +2,7 @@
 <Containers>
 <Beta>True</Beta>
 <Category>Productivity: Tools:</Category>
-  <Name>jacobped-teamcity-agent</Name>
+  <Name>teamcity-agent</Name>
   <Description>
     Teamcity Build agent for doing the automated build and deployment tasks. Includes docker-in-docker support.[br]
     [b][u][span style='color: #E80000;']Config directory[/span][/u][/b][br]

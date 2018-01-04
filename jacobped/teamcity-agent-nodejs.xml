@@ -4,7 +4,7 @@
 <Category>Productivity: Tools:</Category>
   <Name>jacobped-teamcity-agent-nodejs</Name>
   <Description>
-    Teamcity Build agent for doing the automated build and deployment tasks. Includes docker-in-docker support and Nodejs.[br]
+    Teamcity Build agent for doing the automated build and deployment tasks. Includes ability to specify extra docker daemon parameters and Nodejs.[br]
     [b][u][span style='color: #E80000;']Config directory[/span][/u][/b][br]
     [b]/config[/b] This is where TeamCity will store it's configuration files and various persistent data.
     [br]
@@ -12,7 +12,7 @@
     [b]/config[/b] For defining docker daemon options. [br]https://docs.docker.com/engine/reference/commandline/dockerd/
   </Description>
   <Overview>
-	Teamcity Build agent for doing the automated build and deployment tasks. Includes docker-in-docker support.
+	Teamcity Build agent for doing the automated build and deployment tasks. Includes ability to specify extra docker daemon parameters and Nodejs.
   </Overview>
   <Support>none atm</Support>
   <Registry>https://registry.hub.docker.com/u/jacobpeddk/teamcity-agent-nodejs/</Registry>
