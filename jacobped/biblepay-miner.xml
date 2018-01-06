@@ -38,7 +38,7 @@
     </Variable>
     <Variable>
       <Name>REINDEX</Name>
-      <Value>1</Value>
+      <Value>0</Value>
     </Variable>
     <Variable>
       <Name>POOL</Name>
