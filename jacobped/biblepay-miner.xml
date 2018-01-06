@@ -16,7 +16,7 @@
   <Support>none atm</Support>
   <Registry>https://registry.hub.docker.com/u/gagaha/biblepay/</Registry>
   <GitHub>https://github.com/gagaha/biblepay-docker</GitHub>
-  <Repository>docker pull gagaha/biblepay</Repository>
+  <Repository>gagaha/biblepay</Repository>
   <Project>https://biblepay.org</Project>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
