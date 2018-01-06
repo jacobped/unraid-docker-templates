@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+<Beta>False</Beta>
+<Category>Productivity: Tools:</Category>
+  <Name>biblepay-miner</Name>
+  <Description>
+    BiblePay cpu miner.
+    [br]
+    [b]/data[/b] This is where it's configuration files and various persistent data will be stored. Including the blockchain data.
+    [br]
+    [b]Remember to define WORKERID variable[/b]
+  </Description>
+  <Overview>
+	BiblePay cpu miner.
+  </Overview>
+  <Support>none atm</Support>
+  <Registry>https://registry.hub.docker.com/u/gagaha/biblepay/</Registry>
+  <GitHub>https://github.com/gagaha/biblepay-docker</GitHub>
+  <Repository>docker pull gagaha/biblepay</Repository>
+  <Project>https://biblepay.org</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>GENPROCLIMIT</Name>
+      <Value>2</Value>
+    </Variable>
+    <Variable>
+      <Name>WORKERID</Name>
+      <Value></Value>
+    </Variable>
+    <Variable>
+      <Name>GEN</Name>
+      <Value>1</Value>
+    </Variable>
+    <Variable>
+      <Name>REINDEX</Name>
+      <Value>1</Value>
+    </Variable>
+    <Variable>
+      <Name>POOL</Name>
+      <Value>http://pool.biblepay.org</Value>
+    </Variable>
+    <Variable>
+      <Name>POOLPORT</Name>
+      <Value>80</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/biblepay-miner/data</HostDir>
+      <ContainerDir>/root/.biblepaycore</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/biblepay-icon.png</Icon>
+  <ExtraParams></ExtraParams>
+</Containers>
