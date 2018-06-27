@@ -8,11 +8,13 @@
   <Repository>rabbitmq:3-management</Repository>
   <Project>https://www.rabbitmq.com/</Project>
   <Overview>
-    RabbitMQ - Message broker.
+    [u][b]RabbitMQ - Message broker[/b][/u]
+    [br]
     [br]
     [b]Port: 15672[/b] This is the webpanel, from which you can manage and monitor this RabbitMQ container instance.
     [br]
     [b]Port: 5672[/b] This is the messaging port, which is where various applications connect to the instance and use it.
+    [br]
     [br]
     [u][b]Extra parameters[/b][/u][br]
     [b]--hostname unraid-rabbitmq[/b]: Sets the container hostname to unraid-rabbitmq. This way the data mesage broker data can be persistent.
@@ -52,6 +54,6 @@
   </Data>
   <ExtraParams>--hostname unraid-rabbitmq</ExtraParams>
   <Config Name="Persistent Data" Target="/var/lib/rabbitmq" Default="" Mode="rw" Description="Where RabbitMQ store its persistent data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/rabbitmq</Config>
-  <Config Name="TCP Web management and monitoring port" Target="15672" Default="15672" Mode="tcp" Description="RabbitMQ management webGUI port. Access it from the webbrowser." Type="Port" Display="always" Required="true" Mask="{8}">15672</Config>
-  <Config Name="TCP broker communication port" Target="5672" Default="5672" Mode="tcp" Description="RabbitMQ communication port that other applications connect to." Type="Port" Display="always" Required="true" Mask="{8}">5672</Config>
+  <Config Name="TCP Web management and monitoring port" Target="15672" Default="15672" Mode="tcp" Description="For accessing the RabbitMQ management webGUI from a webbrowser." Type="Port" Display="always" Required="true" Mask="{8}">15672</Config>
+  <Config Name="TCP broker communication port" Target="5672" Default="5672" Mode="tcp" Description="Communication port that other applications connect to." Type="Port" Display="always" Required="true" Mask="{8}">5672</Config>
 </Containers>
