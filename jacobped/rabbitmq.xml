@@ -11,6 +11,8 @@
     [u][b]RabbitMQ - Message broker[/b][/u]
     [br]
     [br]
+    Default user and password is "guest".
+    [br]
     [b]Port: 15672[/b] This is the webpanel, from which you can manage and monitor this RabbitMQ container instance.
     [br]
     [b]Port: 5672[/b] This is the messaging port, which is where various applications connect to the instance and use it.
@@ -19,7 +21,7 @@
     [u][b]Extra parameters[/b][/u][br]
     [b]--hostname unraid-rabbitmq[/b]: Sets the container hostname to unraid-rabbitmq. This way the data mesage broker data can be persistent.
   </Overview>
-  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/rabbitmq-icon.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/rabbitmq-icon.png</Icon>
   <Support>none atm</Support>
   <WebUI>http://[IP]:[PORT:15672]</WebUI>
   <BindTime>true</BindTime>
