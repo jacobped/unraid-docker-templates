@@ -10,8 +10,6 @@
     [br]
     [b]Port: 5672[/b] This is the messaging port, which is where various applications connet to the instance to use it.
     [br]
-    [b]Remember to define WORKERID variable[/b]
-    [br]
     [u][b]Extra parameters[/b][/u][br]
     [b]--hostname unraid-rabbitmq[/b]: Sets the container hostname to unraid-rabbitmq. This way the data mesage broker data can be persistent.
   </Description>
