@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+<Beta>False</Beta>
+<Category>Network:Other</Category>
+  <Name>RabbitMQ</Name>
+  <Description>
+    RabbitMQ - Message broker.
+    [br]
+    [b]Port: 8080[/b] This is the webpanel, from which you can manage and monitor this RabbitMQ container instance.
+    [br]
+    [b]Port: 5672[/b] This is the messaging port, which is where various applications connet to the instance to use it.
+    [br]
+    [b]Remember to define WORKERID variable[/b]
+    [br]
+    [u][b]Extra parameters[/b][/u][br]
+    [b]--hostname unraid-rabbitmq[/b]: Sets the container hostname to unraid-rabbitmq. This way the data mesage broker data can be persistent.
+  </Description>
+  <Overview>
+	RabbitMQ message broker
+  </Overview>
+  <Support>none atm</Support>
+  <Registry>https://registry.hub.docker.com/_/rabbitmq/</Registry>
+  <GitHub>https://github.com/docker-library/rabbitmq/</GitHub>
+  <Repository>rabbitmq:3-management</Repository>
+  <Project>https://www.rabbitmq.com/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>RABBITMQ_VM_MEMORY_HIGH_WATERMARK</Name>
+      <Value>2048MiB</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/rabbitmq/data</HostDir>
+      <ContainerDir>/var/lib/rabbitmq</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/rabbitmq-icon.svg</Icon>
+  <ExtraParams>--hostname unraid-rabbitmq</ExtraParams>
+</Containers>
