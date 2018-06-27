@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Containers>
+<Containers version="2">
   <Beta>False</Beta>
   <Category>Network:Other</Category>
   <Name>RabbitMQ</Name>
