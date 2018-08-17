@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>SinusBot</Name>
+  <Repository>galexrt/sinusbot</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8065</HostPort>
+        <ContainerPort>8087</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/sinusbot/data</HostDir>
+      <ContainerDir>/sinusbot/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/sinusbot/scripts</HostDir>
+      <ContainerDir>/sinusbot/scripts</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/sinusbot/config</HostDir>
+      <ContainerDir>/sinusbot/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>SINUS_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>SINUS_GROUP</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Data" Target="/sinusbot/data" Default="" Mode="rw" Description="Container Path: /sinusbot/data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/sinusbot/data</Config>
+  <Config Name="Scripts" Target="/sinusbot/scripts" Default="" Mode="rw" Description="Container Path: /sinusbot/scripts" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/sinusbot/scripts</Config>
+  <Config Name="Config" Target="/sinusbot/config" Default="" Mode="rw" Description="Container Path: /sinusbot/config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/sinusbot/config</Config>
+  <Config Name="WebGUI" Target="8087" Default="" Mode="tcp" Description="Container Port: 8087" Type="Port" Display="always" Required="false" Mask="false">8065</Config>
+  <Config Name="SINUS_USER UID" Target="SINUS_USER" Default="" Mode="" Description="Container Variable: SINUS_USER" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="SINUS_GROUP UID" Target="SINUS_GROUP" Default="" Mode="" Description="Container Variable: SINUS_GROUP" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+</Container>
