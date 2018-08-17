@@ -9,12 +9,13 @@
   <Support/>
   <Project/>
   <Overview/>
-  <Category/>
-  <WebUI/>
+  <Category>Tools: MediaApp:Music Network:Other Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:8087]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/sinusbot-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
+  <DateInstalled>1534533905</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description/>
@@ -22,7 +23,7 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>8065</HostPort>
+        <HostPort>8087</HostPort>
         <ContainerPort>8087</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -61,7 +62,7 @@
   <Config Name="Data" Target="/sinusbot/data" Default="" Mode="rw" Description="Container Path: /sinusbot/data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/sinusbot/data</Config>
   <Config Name="Scripts" Target="/sinusbot/scripts" Default="" Mode="rw" Description="Container Path: /sinusbot/scripts" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/sinusbot/scripts</Config>
   <Config Name="Config" Target="/sinusbot/config" Default="" Mode="rw" Description="Container Path: /sinusbot/config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/sinusbot/config</Config>
-  <Config Name="WebGUI" Target="8087" Default="" Mode="tcp" Description="Container Port: 8087" Type="Port" Display="always" Required="false" Mask="false">8065</Config>
+  <Config Name="WebGUI" Target="8087" Default="" Mode="tcp" Description="Container Port: 8087" Type="Port" Display="always" Required="false" Mask="false">8087</Config>
   <Config Name="SINUS_USER UID" Target="SINUS_USER" Default="" Mode="" Description="Container Variable: SINUS_USER" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="SINUS_GROUP UID" Target="SINUS_GROUP" Default="" Mode="" Description="Container Variable: SINUS_GROUP" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
 </Container>
