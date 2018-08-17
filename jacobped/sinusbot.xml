@@ -12,7 +12,7 @@
   <Category/>
   <WebUI/>
   <TemplateURL/>
-  <Icon/>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/sinusbot-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <DonateText/>
