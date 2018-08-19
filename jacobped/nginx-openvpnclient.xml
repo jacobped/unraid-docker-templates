@@ -1,67 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-<Beta>True</Beta>
-<Category>Network:Proxy</Category>
+<?xml version="1.0"?>
+<Container version="2">
   <Name>nginx-openvpnclient</Name>
-  <Description>
-    Nginx reverse proxy over OpenVPN-Client[br]
-	[br]
-    [b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]
-    [b]/config[/b] This is where the container will store it's configuration files.[br]
-    [b][u][span style='color: #E80000;']Logs directory[/span][/u][/b][br]
-    [b]/log[/b] This is where logs from Nginx and process manager will be stored.[br]
-	[br]
-	[u][b]Extra parameters[/b][/u][br]
-	[b]--cap-add=NET_ADMIN[/b]: Required to give access to host network stack without container being priviledged.[br]
-	[b]--device=/dev/net/tun[/b]: Gives OpenVPN access to use the tun adapter.
-  </Description>
-  <Overview>
-	Nginx reverse proxy over OpenVPN-Client.
-  </Overview>
-  <Support>none atm</Support>
-  <Registry>https://registry.hub.docker.com/u/jacobpeddk/nginx-openvpnclient/</Registry>
-  <GitHub>https://github.com/jacobped/Docker-Nginx-OpenVPNClient</GitHub>
   <Repository>jacobpeddk/nginx-openvpnclient</Repository>
-  <Project>https://github.com/jacobped/Docker-Nginx-OpenVPNClient</Project>
-  <BindTime>true</BindTime>
+  <Registry>https://registry.hub.docker.com/u/jacobpeddk/nginx-openvpnclient/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
   <Privileged>false</Privileged>
+  <Support>https://github.com/jacobped/Docker-Nginx-OpenVPNClient/issues</Support>
+  <Project/>
+  <Overview>Nginx reverse proxy from a OpenVPN Client connection[br]&#xD;
+[br]&#xD;
+[b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]&#xD;
+[b]/config[/b] This is where the container will store it's configuration and log files.[br]&#xD;
+[br]&#xD;
+[u][b]Extra parameters[/b][/u][br]&#xD;
+[b]--cap-add=NET_ADMIN[/b]: Required to give access to host network stack without container being priviledged.[br]&#xD;
+[b]--device=/dev/net/tun[/b]: Gives OpenVPN access to use the tun adapter.</Overview>
+  <Category>Network:Proxy Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:8282]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/nginx-openvpnclient-icon.png</Icon>
+  <ExtraParams>--cap-add=NET_ADMIN --device=/dev/net/tun</ExtraParams>
+  <PostArgs/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Nginx reverse proxy from a OpenVPN Client connection[br]&#xD;
+[br]&#xD;
+[b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]&#xD;
+[b]/config[/b] This is where the container will store it's configuration and log files.[br]&#xD;
+[br]&#xD;
+[u][b]Extra parameters[/b][/u][br]&#xD;
+[b]--cap-add=NET_ADMIN[/b]: Required to give access to host network stack without container being priviledged.[br]&#xD;
+[b]--device=/dev/net/tun[/b]: Gives OpenVPN access to use the tun adapter.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>1470</HostPort>
+        <HostPort>8282</HostPort>
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
-  <Environment>
-    <Variable>
-      <Name>UMASK</Name>
-      <Value>000</Value>
-    </Variable>
-    <Variable>
-      <Name>PUID</Name>
-      <Value>99</Value>
-    </Variable>
-    <Variable>
-      <Name>PGID</Name>
-      <Value>100</Value>
-    </Variable>
-  </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/appdata/nginx-openvpnclient/config</HostDir>
+      <HostDir>/mnt/user/appdata/nginx-openvpnclient</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-    <Volume>
-      <HostDir>/mnt/cache/appdata/nginx-openvpnclient/log</HostDir>
-      <ContainerDir>/log</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:1470]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/nginx-openvpnclient-icon.png</Icon>
-  <ExtraParams>--cap-add=NET_ADMIN --device=/dev/net/tun</ExtraParams>
-</Containers>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Proxy test port" Target="80" Default="8282" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8282</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nginx-openvpnclient" Mode="rw" Description="Container Path: /config" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/nginx-openvpnclient</Config>
+</Container>
