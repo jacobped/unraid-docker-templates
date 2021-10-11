@@ -12,6 +12,9 @@
 [br]&#xD;
 [b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]&#xD;
 [b]/proxmox-data[/b] This is where the container will store the backup data.[br]&#xD;
+[b]/etc/proxmox-backup[/b] Configuration data.[br]&#xD;
+[b]/var/log/proxmox-backup[/b] Application logs.[br]&#xD;
+[b]/var/lib/proxmox-backup[/b] Persisted application libraries.[br]&#xD;
   </Overview>
   <Category>Backup</Category>
   <WebUI>http://[IP]:[PORT:8787]/</WebUI>
@@ -26,6 +29,9 @@
 [br]&#xD;
 [b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]&#xD;
 [b]/proxmox-data[/b] This is where the container will store the backup data.[br]&#xD;
+[b]/etc/proxmox-backup[/b] Configuration data.[br]&#xD;
+[b]/var/log/proxmox-backup[/b] Application logs.[br]&#xD;
+[b]/var/lib/proxmox-backup[/b] Persisted application libraries.[br]&#xD;
   </Description>
   <Networking>
     <Mode>bridge</Mode>
@@ -50,7 +56,7 @@
     </Volume>
     <Volume>
       <HostDir>/mnt/user/appdata/proxmox-backup/libs</HostDir>
-      <ContainerDir>/var/lib/proxmox-backu</ContainerDir>
+      <ContainerDir>/var/lib/proxmox-backup</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
@@ -81,4 +87,7 @@
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="Backup data path" Target="/proxmox-data" Default="/mnt/user/backup-proxmox" Mode="rw" Description="Proxmox backup data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/backup-proxmox</Config>
+  <Config Name="Configuration" Target="/etc/proxmox-backup" Default="/mnt/user/appdata/proxmox-backup/config" Mode="rw" Description="Container Path: /etc/proxmox-backup" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/proxmox-backup/config</Config>
+  <Config Name="Logs" Target="/var/log/proxmox-backup" Default="/mnt/user/appdata/proxmox-backup/logs" Mode="rw" Description="Container Path: /var/log/proxmox-backup" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/proxmox-backup/logs</Config>
+  <Config Name="Libraries" Target="/var/lib/proxmox-backup" Default="/mnt/user/appdata/proxmox-backup/libs" Mode="rw" Description="Container Path: /var/lib/proxmox-backup" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/proxmox-backup/libs</Config>
 </Container>
