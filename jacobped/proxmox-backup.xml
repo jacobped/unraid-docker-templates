@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>proxmox-backup</Name>
+  <Repository>ayufan/proxmox-backup-server:v2.0.7</Repository>
+  <Registry>https://registry.hub.docker.com/u/ayufan/proxmox-backup-server/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/jacobped/pve-backup-server-dockerfiles</Support>
+  <Project/>
+  <Overview>Proxmox Backup server[br]&#xD;
+[br]&#xD;
+[b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]&#xD;
+[b]/proxmox-data[/b] This is where the container will store the backup data.[br]&#xD;
+  </Overview>
+  <Category>Backup</Category>
+  <WebUI>http://[IP]:[PORT:8787]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/jacobped/unraid-docker-templates/master/jacobped/images/proxmox.png</Icon>
+  <ExtraParams>
+  </ExtraParams>
+  <PostArgs/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Proxmox backup server for storing and processing VM backups[br]&#xD;
+[br]&#xD;
+[b][u][span style='color: #E80000;']Data directory[/span][/u][/b][br]&#xD;
+[b]/proxmox-data[/b] This is where the container will store the backup data.[br]&#xD;
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8787</HostPort>
+        <ContainerPort>8007</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/proxmox-backup/config</HostDir>
+      <ContainerDir>/etc/proxmox-backup</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/proxmox-backup/logs</HostDir>
+      <ContainerDir>/var/log/proxmox-backup</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/proxmox-backup/libs</HostDir>
+      <ContainerDir>/var/lib/proxmox-backu</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/backup-proxmox</HostDir>
+      <ContainerDir>/proxmox-data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Europe/Copenhagen</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Proxy test port" Target="8007" Default="8787" Mode="tcp" Description="Container Port: 8007" Type="Port" Display="always" Required="true" Mask="false">8787</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Backup data path" Target="/proxmox-data" Default="/mnt/user/backup-proxmox" Mode="rw" Description="Proxmox backup data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/backup-proxmox</Config>
+</Container>
